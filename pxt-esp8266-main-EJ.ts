@@ -122,6 +122,46 @@ namespace esp8266 {
 
         return responseLine
     }
+    /**
+         * Get the specific response from ESP8266.
+         * Return the line start with the specific response.
+         * @param command The specific response we want to get.
+         * @param timeout Timeout in milliseconds.
+         */
+    //% blockHidden=true
+    //% blockId=esp8266_get_response2
+    export function getResponse2(timeout: number = 100): string {
+        let responseLine2 = ""
+        let timestamp = input.runningTime()
+        while (true) {
+            // Timeout.
+            if (input.runningTime() - timestamp > timeout) {
+                // Check if expected response received in case no CRLF received.
+               // if (rxData.includes(response)) {
+                    responseLine2 = rxData
+              //  }
+               // break
+            }
+
+            // Read until the end of the line.
+            rxData += serial.readString()
+            if (rxData.includes("\r\n")) {
+                // Check if expected response received.
+            //    if (rxData.slice(0, rxData.indexOf("\r\n")).includes(response)) {
+              //      responseLine2 = rxData.slice(0, rxData.indexOf("\r\n"))
+                responseLine2 = rxData
+                    // Trim the Rx data for next call.
+                    rxData = rxData.slice(rxData.indexOf("\r\n") + 2)
+                    break
+               // }
+
+                // Trim the Rx data before loop again.
+                rxData = rxData.slice(rxData.indexOf("\r\n") + 2)
+            } //if (rxData.includes("\r\n"))
+        } // while true
+
+        return responseLine2
+} // function getResponse2
 
 
 

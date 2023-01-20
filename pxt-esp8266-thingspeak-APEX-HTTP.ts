@@ -66,7 +66,7 @@ namespace esp8266 {
         // Connect to ThingSpeak. Return if failed.
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",8080", "OK", 10000) == false) return
        sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_OR_IP + "\",8080", null, 10000)
-
+        basic.showString(getResponse2(100))
         // Construct the data to send.
         /*let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
         if (field2 != null) data += "&field2=" + field2
@@ -80,6 +80,8 @@ namespace esp8266 {
         // Send the data.
         sendCommand("AT+CIPSEND=" + (data.length + 2))
         sendCommand(data)
+
+
 /*
         // Return if "SEND OK" is not received.
         if (getResponse("SEND OK", 1000) == "") return
