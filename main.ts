@@ -49,7 +49,7 @@ input.onButtonPressed(Button.A, function () {
                 `)
             esp8266_EJ.uploadThingspeak(
             "ICPZTSAEIMBWJDTK",
-            100
+            200
             )
             if (esp8266_EJ.isThingspeakUploaded()) {
                 basic.showLeds(`

@@ -64,8 +64,10 @@ namespace esp8266_EJ {
         if (isWifiConnected() == false) return
 
         // Connect to ThingSpeak. Return if failed.
+        if (sendCommand("AT+CIPMUX=0", null, 10000) == false) { null }
         if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",80", "OK", 10000) == false) return
-
+            
+        
         // Construct the data to send.
         let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
         if (field2 != null) data += "&field2=" + field2

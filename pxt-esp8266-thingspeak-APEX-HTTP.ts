@@ -65,6 +65,8 @@ namespace esp8266_EJ {
 
         // Connect to ThingSpeak. Return if failed.
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",8080", "OK", 10000) == false) return
+        if (sendCommand("AT+CIPMUX=0", null, 10000) == false) { null }
+        basic.showString(getResponse2(100))
        sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_OR_IP + "\",8080", null, 10000)
         basic.showString(getResponse2(100))
         // Construct the data to send.
