@@ -10,7 +10,7 @@
 // ThingSpeak API url.
 const THINGSPEAK_API_URL = "api.thingspeak.com"
 
-namespace esp8266 {
+namespace esp8266_EJ {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
     let thingspeakUploaded = false
 

@@ -10,7 +10,7 @@
 // ThingSpeak API url.
 const APEX_SERVER_OR_IP = "192.168.0.4"
 
-namespace esp8266 {
+namespace esp8266_EJ {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
     let APEX_HTTPUploaded = false
 

@@ -15,8 +15,8 @@ input.onButtonPressed(Button.A, function () {
         . . . . .
         . . . . .
         `)
-    esp8266.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
-    if (esp8266.isESP8266Initialized()) {
+    esp8266_EJ.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
+    if (esp8266_EJ.isESP8266Initialized()) {
         basic.showLeds(`
             # . . . .
             . . . . .
@@ -24,7 +24,7 @@ input.onButtonPressed(Button.A, function () {
             . . . . .
             . . . . .
             `)
-        esp8266.connectWiFi("MOBAP", "Budapest1")
+        esp8266_EJ.connectWiFi("MOBAP", "Budapest1")
         basic.showLeds(`
             # # . . .
             . . . . .
@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, function () {
             . . . . .
             . . . . .
             `)
-        if (esp8266.isWifiConnected()) {
+        if (esp8266_EJ.isWifiConnected()) {
             basic.showLeds(`
                 # # . . .
                 . . . . .
@@ -47,11 +47,11 @@ input.onButtonPressed(Button.A, function () {
                 . . . . .
                 . . . . .
                 `)
-            esp8266.uploadThingspeak(
+            esp8266_EJ.uploadThingspeak(
             "ICPZTSAEIMBWJDTK",
-            0
+            100
             )
-            if (esp8266.isThingspeakUploaded()) {
+            if (esp8266_EJ.isThingspeakUploaded()) {
                 basic.showLeds(`
                     # # # . .
                     . . . . .
@@ -103,8 +103,8 @@ basic.showLeds(`
     . . . . .
     . . . . .
     `)
-esp8266.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
-if (esp8266.isESP8266Initialized()) {
+esp8266_EJ.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
+if (esp8266_EJ.isESP8266Initialized()) {
     basic.showLeds(`
         # . . . .
         . . . . .
@@ -112,7 +112,7 @@ if (esp8266.isESP8266Initialized()) {
         . . . . .
         . . . . .
         `)
-    esp8266.connectWiFi("MOBAP", "Budapest1")
+    esp8266_EJ.connectWiFi("MOBAP", "Budapest1")
     basic.showLeds(`
         # # . . .
         . . . . .
@@ -120,7 +120,7 @@ if (esp8266.isESP8266Initialized()) {
         . . . . .
         . . . . .
         `)
-    if (esp8266.isWifiConnected()) {
+    if (esp8266_EJ.isWifiConnected()) {
         basic.showLeds(`
             # # . . .
             . . . . .
@@ -135,11 +135,11 @@ if (esp8266.isESP8266Initialized()) {
             . . . . .
             . . . . .
             `)
-        esp8266.upload_APEX_HTTP_Server(
+        esp8266_EJ.upload_APEX_HTTP_Server(
         "",
         11
         )
-        if (esp8266.is_APEX_HTTP_data_uploaded()) {
+        if (esp8266_EJ.is_APEX_HTTP_data_uploaded()) {
             basic.showLeds(`
                 # # # . .
                 . . . . .
@@ -175,5 +175,5 @@ if (esp8266.isESP8266Initialized()) {
         `)
 }
 basic.forever(function () {
-    
+	
 })
