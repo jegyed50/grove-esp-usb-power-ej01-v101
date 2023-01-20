@@ -46,7 +46,7 @@ if (esp8266.isESP8266Initialized()) {
             . . . . .
             `)
         esp8266.uploadThingspeak(
-        "",
+        "ICPZTSAEIMBWJDTK",
         0
         )
         if (esp8266.isThingspeakUploaded()) {
