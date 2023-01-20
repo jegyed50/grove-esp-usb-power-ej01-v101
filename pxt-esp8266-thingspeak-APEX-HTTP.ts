@@ -8,9 +8,9 @@
  *******************************************************************************/
 
 // ThingSpeak API url.
-const APEX_API_URL = "192.168.0.4"
+const APEX_SERVER_OR_IP = "192.168.0.4"
 
-namespace esp8266_APEX {
+namespace esp8266 {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
     let APEX_HTTPUploaded = false
 
@@ -46,8 +46,8 @@ namespace esp8266_APEX {
     //% weight=29
     //% blockGap=8
     //% blockId=esp8266_upload_APEX_HTTP
-    //% block="Upload data to APEX_HTTP server|Write API path %writeApiKey|Field 1 %field1||Field 2 %field2|Field 3 %field3|Field 4 %field4|Field 5 %field5|Field 6 %field6|Field 7 %field7|Field 8 %field8"
-    export function uploadThingspeak(writeApiKey: string,
+    //% block="Upload data to APEX_HTTP server|Write API path (üresen maradhat) %writeApiKey|Field 1 %field1||Field 2 %field2|Field 3 %field3|Field 4 %field4|Field 5 %field5|Field 6 %field6|Field 7 %field7|Field 8 %field8"
+    export function upload_APEX_HTTP_Server(writeApiKey: string,
         field1: number,
         field2: number = null,
         field3: number = null,
@@ -58,28 +58,29 @@ namespace esp8266_APEX {
         field8: number = null) {
 
         // Reset the upload successful flag.
-        thingspeakUploaded = false
+        APEX_HTTPUploaded = false
 
         // Make sure the WiFi is connected.
         if (isWifiConnected() == false) return
 
         // Connect to ThingSpeak. Return if failed.
-        if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",80", "OK", 10000) == false) return
+       // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",8080", "OK", 10000) == false) return
+       sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_OR_IP + "\",8080", null, 10000)
 
         // Construct the data to send.
-        let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
+        /*let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
         if (field2 != null) data += "&field2=" + field2
         if (field2 != null) data += "&field3=" + field3
         if (field2 != null) data += "&field4=" + field4
         if (field2 != null) data += "&field5=" + field5
         if (field2 != null) data += "&field6=" + field6
         if (field2 != null) data += "&field7=" + field7
-        if (field2 != null) data += "&field8=" + field8
-
+        if (field2 != null) data += "&field8=" + field8*/
+        let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-11.1"
         // Send the data.
         sendCommand("AT+CIPSEND=" + (data.length + 2))
         sendCommand(data)
-
+/*
         // Return if "SEND OK" is not received.
         if (getResponse("SEND OK", 1000) == "") return
 
@@ -95,7 +96,8 @@ namespace esp8266_APEX {
         if (uploadCount == 0) return
 
         // Set the upload successful flag and return.
-        thingspeakUploaded = true
+        */
+        APEX_HTTPUploaded = true
         return
     }
 }
