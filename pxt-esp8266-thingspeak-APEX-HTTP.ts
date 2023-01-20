@@ -65,10 +65,10 @@ namespace esp8266_EJ {
 
         // Connect to ThingSpeak. Return if failed.
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",8080", "OK", 10000) == false) return
-        if (sendCommand("AT+CIPMUX=0", null, 10000) == false) { null }
-        basic.showString(getResponse2(100))
+       // if (sendCommand("AT+CIPMUX=0", null, 10000) == false) { null }
        sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_OR_IP + "\",8080", null, 10000)
-        basic.showString(getResponse2(100))
+        if (sendCommand("AT + CIPMODE=1", null, 10000) == false) { null }
+      //  basic.showString(getResponse2(100))
         // Construct the data to send.
         /*let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
         if (field2 != null) data += "&field2=" + field2
@@ -78,11 +78,12 @@ namespace esp8266_EJ {
         if (field2 != null) data += "&field6=" + field6
         if (field2 != null) data += "&field7=" + field7
         if (field2 != null) data += "&field8=" + field8*/
-        let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-11.1"
+        //let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-11.1"
+        let data = "GET http://192.168.0.4:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
         // Send the data.
         sendCommand("AT+CIPSEND=" + (data.length + 2))
         sendCommand(data)
-
+        //basic.showString(getResponse2(100))
 
 /*
         // Return if "SEND OK" is not received.
@@ -101,6 +102,36 @@ namespace esp8266_EJ {
 
         // Set the upload successful flag and return.
         */
+        APEX_HTTPUploaded = true
+        return
+    }
+    /**
+    * APEX HTTP request 
+    * @param http_server_path Full URL
+    */
+    //% subcategory="APEX_HTTP"
+    //% weight=29
+    //% blockGap=8
+    //% blockId=esp8266_APEX_HTTP_Request
+    //% block="APEX_HTTP_Request|Write API path  %http_server_path"
+    export function APEX_HTTP_Request(http_server_path: string) {
+
+        // Reset the upload successful flag.
+        APEX_HTTPUploaded = false
+
+        // Make sure the WiFi is connected.
+        if (isWifiConnected() == false) return
+
+       //if (sendCommand("AT+HTTPCLIENT=2,3,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field1=300\",\"\",\"\",2", null, 10000) == false) { null }
+        //AT + HTTPGETSIZE="http://www.baidu.com/img/bdlogo.gif"
+       if (sendCommand("AT+HTTPGETSIZE\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field1=300\",\"\",\"\",1", null, 10000) == false) { null }
+        if (sendCommand("AT+PING=\"44.198.242.240\"", null, 10000) == false) { null }
+  basic.pause(1000)
+               basic.showString(getResponse2(100))
+        basic.showString(getResponse2(100))
+               // let data = "GET http://192.168.0.4:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
+        // Send the data.
+       
         APEX_HTTPUploaded = true
         return
     }
