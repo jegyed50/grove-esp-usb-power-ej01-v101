@@ -45,11 +45,11 @@ if (esp8266.isESP8266Initialized()) {
             . . . . .
             . . . . .
             `)
-        esp8266.uploadThingspeak(
-        "ICPZTSAEIMBWJDTK",
-        0
+        esp8266.upload_APEX_HTTP_Server(
+        "",
+        11
         )
-        if (esp8266.isThingspeakUploaded()) {
+        if (esp8266.is_APEX_HTTP_data_uploaded()) {
             basic.showLeds(`
                 # # # . .
                 . . . . .
