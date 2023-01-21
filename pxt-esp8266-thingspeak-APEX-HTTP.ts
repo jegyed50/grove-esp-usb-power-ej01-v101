@@ -8,7 +8,7 @@
  *******************************************************************************/
 
 // ThingSpeak API url.
-const APEX_SERVER_OR_IP = "192.168.0.4"
+const APEX_SERVER_OR_IP = "192.168.1.101"
 
 namespace esp8266_EJ {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
@@ -79,7 +79,7 @@ namespace esp8266_EJ {
         if (field2 != null) data += "&field7=" + field7
         if (field2 != null) data += "&field8=" + field8*/
         //let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-11.1"
-        let data = "GET http://192.168.0.4:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
+        let data = "GET http://192.168.1.101:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
         // Send the data.
         sendCommand("AT+CIPSEND=" + (data.length + 2))
         sendCommand(data)
@@ -125,10 +125,11 @@ namespace esp8266_EJ {
        //if (sendCommand("AT+HTTPCLIENT=2,3,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field1=300\",\"\",\"\",2", null, 10000) == false) { null }
         //AT + HTTPGETSIZE="http://www.baidu.com/img/bdlogo.gif"
        if (sendCommand("AT+HTTPGETSIZE\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field1=300\",\"\",\"\",1", null, 10000) == false) { null }
-        if (sendCommand("AT+PING=\"44.198.242.240\"", null, 10000) == false) { null }
-  basic.pause(1000)
-               basic.showString(getResponse2(100))
-        basic.showString(getResponse2(100))
+    //    if (sendCommand("AT+PING=\"44.198.242.240\"", null, 10000) == false) { null }
+//  basic.pause(1000)
+         //      basic.showString(getResponse2(100))
+       // basic.showString(getResponse2(100))
+        radio.sendString("getResponse2(100)")
                // let data = "GET http://192.168.0.4:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
         // Send the data.
        

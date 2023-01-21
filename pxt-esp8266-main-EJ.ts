@@ -246,7 +246,7 @@ namespace esp8266_EJ {
         if (sendCommand("AT+RESTORE", "ready", 5000) == false) return
 
         // Turn off echo.
-        if (sendCommand("ATE0", "OK") == false) return
+        if (sendCommand("ATE1", "OK") == false) return
 
         // Initialized successfully.
         // Set the flag.
