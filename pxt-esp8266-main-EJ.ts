@@ -27,7 +27,7 @@ namespace esp8266_EJ {
      * @param expected_response Wait for this response.
      * @param timeout Timeout in milliseconds.
      */
-    //% blockHidden=true
+  
     //% blockId=esp8266_send_command
     export function sendCommand(command: string, expected_response: string = null, timeout: number = 100): boolean {
         // Wait a while from previous command.
@@ -88,7 +88,7 @@ namespace esp8266_EJ {
      * @param command The specific response we want to get.
      * @param timeout Timeout in milliseconds.
      */
-    //% blockHidden=true
+
     //% blockId=esp8266_get_response
     export function getResponse(response: string, timeout: number = 100): string {
         let responseLine = ""
@@ -128,7 +128,7 @@ namespace esp8266_EJ {
          * @param command The specific response we want to get.
          * @param timeout Timeout in milliseconds.
          */
-    //% blockHidden=true
+  
     //% blockId=esp8266_get_response2
     export function getResponse2(timeout: number = 100): string {
         let responseLine2 = ""

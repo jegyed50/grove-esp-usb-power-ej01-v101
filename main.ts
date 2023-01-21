@@ -49,7 +49,7 @@ input.onButtonPressed(Button.A, function () {
                 `)
             esp8266_EJ.uploadThingspeak(
             "ICPZTSAEIMBWJDTK",
-            250
+            300
             )
             if (esp8266_EJ.isThingspeakUploaded()) {
                 basic.showLeds(`
@@ -104,7 +104,7 @@ input.onButtonPressed(Button.AB, function () {
         . . . . .
         . . . . .
         `)
-    esp8266_EJ.init(SerialPin.P15, SerialPin.P16, BaudRate.BaudRate115200)
+    esp8266_EJ.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
     if (esp8266_EJ.isESP8266Initialized()) {
         basic.showLeds(`
             # . . . .
@@ -200,7 +200,7 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         . . . . .
         `)
-    esp8266_EJ.init(SerialPin.P15, SerialPin.P16, BaudRate.BaudRate115200)
+    esp8266_EJ.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
     if (esp8266_EJ.isESP8266Initialized()) {
         basic.showLeds(`
             # . . . .
