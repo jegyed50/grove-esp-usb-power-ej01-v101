@@ -1,195 +1,189 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="device_print_message" id="Cm$AAJM+|??:Iy!%%88S" disabled="true" x="570" y="-377"><value name="text"><shadow type="text" disabled="true"><field name="TEXT">Hello!</field></shadow><block type="serial_read_until" id="R[5!WJTd7[![@T2J--s:" disabled="true"><value name="delimiter"><shadow type="serial_delimiter_conv" id="x!Q-2%W`x3,.@6xfrjz%" disabled="true"><field name="del">Delimiters.NewLine</field></shadow></value></block></value></block><block type="device_forever" id="3K$[FE;h%Pwzx-/Qg7Pr" x="-183" y="-261"></block><block type="pxt-on-start" id="YpQ).wO{UASug[?)Q/L:" x="0" y="0"><statement name="HANDLER"><block type="radio_set_group" id="(dUKC7S0f5|U`#u^pmJL"><value name="ID"><shadow type="math_number_minmax" id="/:JCWN+sL~BBkqY|s`W*"><mutation min="0" max="255" label="Id" precision="0"></mutation><field name="SLIDER">1</field></shadow></value><next><block type="device_set_brightness" id="K_]bMKi-n`!XyH=QRH;="><value name="value"><shadow type="math_number_minmax" id="cDDU_wYW(`Z;ag,}X)aa"><mutation min="0" max="255" label="Number" precision="0"></mutation><field name="SLIDER">10</field></shadow></value><next><block type="radio_datagram_send_string" id="-5{!OU$g!2mQHD^ir.,a"><value name="msg"><shadow type="text" id="rT_$0Ta4s59rT%9qeF3["><field name="TEXT">XXXXX</field></shadow></value><next><block type="device_show_leds" id=":0tqwy6Mi|KX2EQqHJl~"><field name="LEDS">`
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="device_print_message" id="6G(E8}-2)@@zS?-/5I0K" disabled="true" x="560" y="-387"><value name="text"><shadow type="text" disabled="true"><field name="TEXT">Hello!</field></shadow><block type="serial_read_until" id=",+V!Ai-`!qz3?#x,5)Lr" disabled="true"><value name="delimiter"><shadow type="serial_delimiter_conv" id=":)=L*lzjGuvRj;JU7NF|" disabled="true"><field name="del">Delimiters.NewLine</field></shadow></value></block></value></block><block type="device_forever" id="cxn}K^`09AOvmC$E8xYm" x="-193" y="-271"></block><block type="pxt-on-start" id="gaNT*R!mn*h7Up;E=MH@" x="0" y="0"><statement name="HANDLER"><block type="radio_set_group" id="YZZ$yf^_%jg0.LFId.C?"><value name="ID"><shadow type="math_number_minmax" id="E#FW0]vlV)ytG_V=rSN%"><mutation min="0" max="255" label="Number" precision="0"></mutation><field name="SLIDER">1</field></shadow></value><next><block type="device_set_brightness" id="^WB[;rHs#2KV,G@0XjHV"><value name="value"><shadow type="math_number_minmax" id="/O,N!uvcyVv?J}=;kT{0"><mutation min="0" max="255" label="Number" precision="0"></mutation><field name="SLIDER">10</field></shadow></value><next><block type="radio_datagram_send_string" id="zkWb8.ruz5lQDT!?ymuN"><value name="msg"><shadow type="text" id="pYQ@)s/9?26@F(P|Z_7R"><field name="TEXT">x</field></shadow></value><next><block type="radio_datagram_send_string" id="WkLz[z[C5N[W4oXJ()r!"><value name="msg"><shadow type="text" id=";]Z%_zlDN/2*t/]~+Z:3"><field name="TEXT">X</field></shadow></value><next><block type="device_show_leds" id="w[R$s34|wMfpFPTeVwN2"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . # . .
         `</field><comment pinned="false" h="80" w="160">APEX_HTTP
-Grove ESP USB power EJ01 v1.01</comment><next><block type="device_pause" id="uX95g3MQxK1.A$:39(nu"><value name="pause"><shadow type="timePicker" id="JdHwvg!cKJ4TvE:rbjyV"><field name="ms">1000</field></shadow></value></block></next></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id="^{]ePRtHo8S.rx!=d-pZ" x="322" y="7"><field name="NAME">Button.A</field><comment pinned="false" h="80" w="160">thingspeak</comment><statement name="HANDLER"><block type="device_show_leds" id="hv)(**Sr;t/s(Qgk`9ee"><field name="LEDS">`
+Grove ESP USB power EJ01 v1.01</comment><next><block type="device_pause" id="7Y~4n5`n9AR~jZASt6vi"><value name="pause"><shadow type="timePicker" id="rk/1R2#p.D1Kg|3U$UGl"><field name="ms">1000</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id=")~;R*1$33(.K^Hyz!zWj" x="312" y="-3"><field name="NAME">Button.A</field><comment pinned="false" h="80" w="160">thingspeak</comment><statement name="HANDLER"><block type="device_show_leds" id="$xvb=O[.`7W#ku7%s80a"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . #
-        `</field><comment pinned="false" h="80" w="160">Grove ESP USB power EJ01 v1.01</comment><next><block type="device_show_leds" id="wKAa%#T^Mk}VVQm{7*Sr"><field name="LEDS">`
+        `</field><comment pinned="false" h="80" w="160">Grove ESP USB power EJ01 v1.01</comment><next><block type="device_show_leds" id="](0q64[e2:8gu+0VR]QP"><field name="LEDS">`
         # . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_init" id="-}v8+%n;Ejf$nKm:*~75"><field name="tx">SerialPin.P16</field><field name="rx">SerialPin.P15</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="controls_if" id="yIg@ace.pS%O9ffxpHpw"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_esp8266_initialized" id="?6n_E6m8L|}M,(uAeDDq"></block></value><statement name="DO0"><block type="device_show_leds" id="fqA%:e;I7$^Ey8-lN9OS"><field name="LEDS">`
+        `</field><next><block type="esp8266_init" id="KGRiEF5t/]1W[fz6G.Ks"><field name="tx">SerialPin.P16</field><field name="rx">SerialPin.P15</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="controls_if" id="CKk@:NKK=F$;d:Rph`~,"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_esp8266_initialized" id="lDo.,!*I1]bE-WxfwP9c"></block></value><statement name="DO0"><block type="device_show_leds" id="O6ws[h!AZVga|6D#j=np"><field name="LEDS">`
         # . . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_connect_wifi" id="i`str~wpLOwC6:3o?pXh"><value name="ssid"><shadow type="text" id="r?k)ald-%Vap:}|TWJR5"><field name="TEXT">TP-LINK_WiFi_2</field></shadow></value><value name="password"><shadow type="text" id="?bo+m+ba:N84++%rbG$T"><field name="TEXT">Kajdacs1</field></shadow></value><next><block type="device_show_leds" id="7p7J)Sy%Q*b1_?4AWR|)"><field name="LEDS">`
+        `</field><next><block type="esp8266_connect_wifi" id="RneKl;T}CD@XgXwC)+kd"><value name="ssid"><shadow type="text" id="W]Zq)s.uqH:HAs,lx_iv"><field name="TEXT">TP-LINK_WiFi_2</field></shadow></value><value name="password"><shadow type="text" id="4APaD2/*3_gJ|Fj-I*s?"><field name="TEXT">Kajdacs1</field></shadow></value><next><block type="device_show_leds" id=",:|/7d=-23.gG6;]OXcF"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="controls_if" id="x$Q]C$F[#*mp1?6#fAow"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_wifi_connected" id="?|`ReQ,@%(EBD/IN(mOF"></block></value><statement name="DO0"><block type="device_show_leds" id="^4/2|9l0Qwo`T06.:J_~"><field name="LEDS">`
+        `</field><next><block type="controls_if" id="Iuu(^p+~;P101hn5x*Nk"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_wifi_connected" id="~N},qwCRUdxx]w6voKS["></block></value><statement name="DO0"><block type="device_show_leds" id=";*Sur:a#VTA2hvv|rKB@"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="device_show_leds" id=")|gi?XagN@0vq!364P/v"><field name="LEDS">`
+        `</field><next><block type="device_show_leds" id="BOfOzIbUWn68J*tK}gvH"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_upload_thingspeak" id="Cw5Xp!3VZ5bk0czo*1%$"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><value name="writeApiKey"><shadow type="text" id="ZpP!eJg;}`IXi0U`nXK6"><field name="TEXT">ICPZTSAEIMBWJDTK</field></shadow></value><value name="field1"><shadow type="math_number" id="W1,;K;gtkMcN|NkYvE8Q"><field name="NUM">350</field></shadow></value><next><block type="controls_if" id="a^:hohWm-ARYpsToMe0W"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_thingspeak_data_uploaded" id="U;sLIz19^EiISf:L2O`d"></block></value><statement name="DO0"><block type="device_show_leds" id="D*m}r:ES:6e}{ss:y?6^"><field name="LEDS">`
+        `</field><next><block type="esp8266_upload_thingspeak" id="7LBqG#t/#3RSn;e/YQJ5"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><value name="writeApiKey"><shadow type="text" id="lI{}wy[rm3F)J$/6w{1c"><field name="TEXT">ICPZTSAEIMBWJDTK</field></shadow></value><value name="field1"><shadow type="math_number" id="5$/cdMVb7+%8BECHxR-G"><field name="NUM">350</field></shadow></value><next><block type="controls_if" id="Jo4:7ERRRYwNuRX,r[1!"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_thingspeak_data_uploaded" id="SbpYM]!8w(Ku8Gj,FpOo"></block></value><statement name="DO0"><block type="device_show_leds" id="(xAAH69JdzCzMP8JBJDn"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # # . . 
         . . . . . 
         . . . . .
-        `</field></block></statement><statement name="ELSE"><block type="device_show_leds" id="vv-HRF;;:[T21=VV0SY."><field name="LEDS">`
+        `</field></block></statement><statement name="ELSE"><block type="device_show_leds" id="Vr8{1Cx1Nb1wD|a`a_|I"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . # . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="$!dr`XS0IeYudhR+7Sfw"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="20!.w+N!.lxMRDnZ_@VV"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . # . . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="3[?n!#7uQHvF{JT@^.eV"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="WE@VmHKgK%Yl)Z!]#${;"><field name="LEDS">`
         # . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         # . . . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id="LH?XhbjRUeK]%(nl=ds|" x="690" y="1"><field name="NAME">Button.B</field><comment pinned="false" h="80" w="160">thingspeak</comment><statement name="HANDLER"><block type="device_show_leds" id="DAn(;K#U.k+ud2/(cl3y"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id=".h@9_7:4Uo)ACz3j}U+M" x="680" y="-9"><field name="NAME">Button.B</field><comment pinned="false" h="80" w="160">thingspeak</comment><statement name="HANDLER"><block type="device_show_leds" id="|s2c_/F|O?thTlw|yPzZ"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . #
-        `</field><comment pinned="false" h="80" w="160">Grove ESP USB power EJ01 v1.01</comment><next><block type="device_show_leds" id=";pBF2G.Qup=;+^C_[M7?"><field name="LEDS">`
+        `</field><comment pinned="false" h="80" w="160">Grove ESP USB power EJ01 v1.01</comment><next><block type="device_show_leds" id="Z@{=_M-k0i)4f6_nQl=o"><field name="LEDS">`
         # . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_init" id="~mfLs2lBXz-Q|3bFBGVK"><field name="tx">SerialPin.P16</field><field name="rx">SerialPin.P15</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="controls_if" id="{1si[)wl=RaYG,2Ew7vf"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_esp8266_initialized" id=":CRpDQ@1.qWdh$yO1:n#"></block></value><statement name="DO0"><block type="device_show_leds" id="AG`0?po3otOrfWFq;Gb`"><field name="LEDS">`
+        `</field><next><block type="esp8266_init" id="5yKg$^h)EhU1`aLoIhru"><field name="tx">SerialPin.P16</field><field name="rx">SerialPin.P15</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="controls_if" id="K]rB4jz-9U=%w)7(lj$x"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_esp8266_initialized" id="i83{drA~*K[qMa_f*UI)"></block></value><statement name="DO0"><block type="device_show_leds" id="wp;y:]/iG#FjZ|PtU~wO"><field name="LEDS">`
         # . . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_connect_wifi" id="X)vZGeQa?_erUy;NO+[Q"><value name="ssid"><shadow type="text" id="Q70+V[JwC7_@Y=QE`[Vm"><field name="TEXT">TP-LINK_WiFi_2</field></shadow></value><value name="password"><shadow type="text" id=".b^93tqm7fSJ/:|cI3r)"><field name="TEXT">Kajdacs1</field></shadow></value><next><block type="device_show_leds" id="^=.Pi0`207Wk!23H_!(z"><field name="LEDS">`
+        `</field><next><block type="esp8266_connect_wifi" id=",9Po$jP}elezl=Hi@K^0"><value name="ssid"><shadow type="text" id="p{1_YpR)laC]yG?7cAr+"><field name="TEXT">TP-LINK_WiFi_2</field></shadow></value><value name="password"><shadow type="text" id="MTXO_DbL8WryT=wNRB5u"><field name="TEXT">Kajdacs1</field></shadow></value><next><block type="device_show_leds" id="LaD}y0MN+hAb8-E0h]Ly"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="controls_if" id="ox1r[;]^$pyQ?j7WlLI^"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_wifi_connected" id="m-qpuY~3|FzeZqCalCte"></block></value><statement name="DO0"><block type="device_show_leds" id="Jk4$Eyd=8^do7Y$IV5bL"><field name="LEDS">`
+        `</field><next><block type="controls_if" id="tm=7AQg+P$gNSyd7;_D$"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_wifi_connected" id="b|-IU*O`z#?zBK*8KtfN"></block></value><statement name="DO0"><block type="device_show_leds" id="wYtr+DN:(kSGl=L]wne$"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="device_show_leds" id="Vn6Iy32OZ^G_TH4+^ast"><field name="LEDS">`
+        `</field><next><block type="device_show_leds" id="y*!lGq(wR_(QECsKH)1U"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_APEX_HTTP_Request" id="yMX7;{jY)skN4DJ$r#^I"><value name="http_server_path"><shadow type="text" id="jigZh{~nU4M;TA8M_X^G"><field name="TEXT"></field></shadow></value><next><block type="controls_if" id="5%DdQvZn:5xdz4V,tpT6"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_APEX_HTTP_data_uploaded" id="dKblQA@%6`A@Uf(a,/D*"></block></value><statement name="DO0"><block type="device_show_leds" id="Q40qqfiR+MYSN@jDm98E"><field name="LEDS">`
+        `</field><next><block type="esp8266_APEX_HTTP_Request" id="Urj1M$sf;@d2M/vtiARK"><value name="http_server_path"><shadow type="text" id="-/M+l?#BeM=3(T6P*:Ow"><field name="TEXT"></field></shadow></value><next><block type="controls_if" id=":#^E!+TKb4(!NE_;mtOz"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_APEX_HTTP_data_uploaded" id="7h*5zfOG[Oh(~]c-M,O;"></block></value><statement name="DO0"><block type="device_show_leds" id="d9~,Z^~:_m`Ng+iTDRv3"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # # . . 
         . . . . . 
         . . . . .
-        `</field></block></statement><statement name="ELSE"><block type="device_show_leds" id="j-~7zqlijBFIWt,Fzbx)"><field name="LEDS">`
+        `</field></block></statement><statement name="ELSE"><block type="device_show_leds" id="%jrT(]^HhcwK`B(RRp_b"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . # . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="q3V=jXt53?KCi:LTA)3:"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="A*;Cd5%h=KX1YNR?VNG="><field name="LEDS">`
         # # . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . # . . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="l$!Dy1Zb(-)Bl,{4aReo"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="D#!l1$(LGAwgwE[;R-nq"><field name="LEDS">`
         # . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         # . . . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id="3wSASlOA6TW{R(A4q|5$" x="1140" y="-6"><field name="NAME">Button.AB</field><statement name="HANDLER"><block type="device_show_leds" id="JD)302)U%;=Qw[soepDS"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id="U:CQRy/Oc1_:!dKy8r0/" x="1130" y="-16"><field name="NAME">Button.AB</field><statement name="HANDLER"><block type="device_show_leds" id="H7`N`K%}r^)[(nILMpZ2"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . #
         `</field><comment pinned="false" h="80" w="160">APEX_HTTP
-Grove ESP USB power EJ01 v1.01</comment><next><block type="device_show_leds" id="{Fru_5E,Kkz=y~a`EEZ_"><field name="LEDS">`
+Grove ESP USB power EJ01 v1.01</comment><next><block type="device_show_leds" id="=UFrt__(LrvN)n!(FIoZ"><field name="LEDS">`
         # . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_init" id=",nGT?)Yx(%gK^?H7v^=F"><field name="tx">SerialPin.P16</field><field name="rx">SerialPin.P15</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="controls_if" id="6WUwXekvoLJW^w|+z)k@"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_esp8266_initialized" id="w,oX^)+,f%DYQS:mZ1Jt"></block></value><statement name="DO0"><block type="device_show_leds" id="1+K{3_y1Ro0HalfuS``@"><field name="LEDS">`
+        `</field><next><block type="esp8266_init" id="(hiTM)r2dLBk8a0p?V9W"><field name="tx">SerialPin.P16</field><field name="rx">SerialPin.P15</field><field name="baudrate">BaudRate.BaudRate115200</field><next><block type="controls_if" id="^P+k;p9`G%oZw}M-7MMU"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_esp8266_initialized" id="x]52%i32Lb-Q7rA)$907"></block></value><statement name="DO0"><block type="device_show_leds" id="vXo87Uv7]o4C92bD3Ji="><field name="LEDS">`
         # . . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_connect_wifi" id="Mr=U-U/_-$guAIH);_Y9"><value name="ssid"><shadow type="text" id="b$=dm_d|*St,44*khe]M"><field name="TEXT">MOBAP</field></shadow></value><value name="password"><shadow type="text" id="Y2G%c.J0@A|2n6lrC-ff"><field name="TEXT">Budapest1</field></shadow></value><next><block type="device_show_leds" id="T0R}!R0@#.cI,mOE_e`l"><field name="LEDS">`
+        `</field><next><block type="esp8266_connect_wifi" id="z7N(s-Z1ZuG/ho^Us9wE"><value name="ssid"><shadow type="text" id="(T$L?/2fKmr#hbJjIEJO"><field name="TEXT">TP-LINK_WiFi_2</field></shadow></value><value name="password"><shadow type="text" id="c6:=UIsqUWgWCoB69bz|"><field name="TEXT">Kajdacs1</field></shadow></value><next><block type="device_show_leds" id="!eT-!(.pjo,Zw_Xg.hAa"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="controls_if" id="Iz/6zZD+r0KSP6(5Ncb)"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_wifi_connected" id="vWpXh2A-jfd7Y9StsnJZ"></block></value><statement name="DO0"><block type="device_show_leds" id="rv68LBZB:KY#7)AQazts"><field name="LEDS">`
+        `</field><next><block type="controls_if" id="iUzZU-vOZv!@oCp`sjo("><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_wifi_connected" id="g#HKY!s?HC;imwsY0ds*"></block></value><statement name="DO0"><block type="device_show_leds" id="5yA%z`k~.*ExF?nPpvgx"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="device_show_leds" id="vry-ee0AyOA=YnrS#O7k"><field name="LEDS">`
+        `</field><next><block type="device_show_leds" id="|~@8z#d54E+a_z]uYtK;"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . . . .
-        `</field><next><block type="esp8266_upload_APEX_HTTP" id="z:x~eTzWa_Jx2dG}Lh6m"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><value name="writeApiKey"><shadow type="text" id="mCxuUrTAJ%~fo5wx;c.7"><field name="TEXT"></field></shadow></value><value name="field1"><shadow type="math_number" id="Jf$:q.M$a$Q5pqk]z8d["><field name="NUM">11</field></shadow></value><next><block type="controls_if" id="ywi):xtZz%R].RsDnC.!"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_APEX_HTTP_data_uploaded" id="a#]Yn30xTE#`tRxL=jqO"></block></value><statement name="DO0"><block type="device_show_leds" id="r%h,`Dh:?v^!*/vgju~C"><field name="LEDS">`
+        `</field><next><block type="esp8266_upload_APEX_HTTP" id="d9fiFt=@o)Co_P;ge{N*"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><value name="writeApiKey"><shadow type="text" id="KYbAD1w0GN;YTkfY4h|t"><field name="TEXT"></field></shadow></value><value name="field1"><shadow type="math_number" id="y:w/;]+5J`uvdpLi!N#0"><field name="NUM">11</field></shadow></value><next><block type="controls_if" id="_Zj1i~hdCPs(4[D|,-tw"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="esp8266_is_APEX_HTTP_data_uploaded" id="q(4gonBgrVcD[]9r!nJi"></block></value><statement name="DO0"><block type="device_show_leds" id="T6A:o@OO1VHb7,jJr./)"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # # . . 
         . . . . . 
         . . . . .
-        `</field></block></statement><statement name="ELSE"><block type="device_show_leds" id="_59!s|Vv-acU+7OA@Kbk"><field name="LEDS">`
+        `</field></block></statement><statement name="ELSE"><block type="device_show_leds" id=",DzOv`S}yzO5qZwb?tTi"><field name="LEDS">`
         # # # . . 
         . . . . . 
         # # . . . 
         . . . . . 
         . . # . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="7oYzf!EMcLsHKVT]q{W~"><field name="LEDS">`
+        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="6HFH}Nzz}u%_665gzZQi"><field name="LEDS">`
         # # . . . 
         . . . . . 
         # . . . . 
         . . . . . 
         . # . . .
-        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="e%!R-x`9*_Q!1y4h2Bu9"><field name="LEDS">`
-        # . . . . 
+        `</field></block></statement></block></next></block></next></block></next></block></statement><statement name="ELSE"><block type="device_show_leds" id="kr;xr;jXf|Z`.:A5Lrp~"><field name="LEDS">`
+        . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         # . . . .
-        `</field></block></statement><next><block type="device_show_leds" id="#v%]+Yya%ARtp?*K8=hT"><field name="LEDS">`
-        . . . . . 
-        . . . . . 
-        . . . . . 
-        . . . . . 
-        . . . # .
-        `</field></block></next></block></next></block></next></block></next></block></statement></block><block type="esp8266_connect_wifi" id="(Aff*kg!TmV/9ya,C!eY" disabled="true" x="759" y="934"><value name="ssid"><shadow type="text" id="2{X`X|gm/.YhPFRXPe7F" disabled="true"><field name="TEXT">ARRIS-02D9</field></shadow></value><value name="password"><shadow type="text" id="$a-yC#AO#~TVI@42=c7a" disabled="true"><field name="TEXT">01C2BBC549B74403</field></shadow></value></block><block type="esp8266_connect_wifi" id="@Q],qm$LvQ/j=**@]0.s" disabled="true" x="400" y="960"><value name="ssid"><shadow type="text" id="GfrSlhrfdawT{l@K4N?X" disabled="true"><field name="TEXT">MOBAP</field></shadow></value><value name="password"><shadow type="text" id="Y~%T-v4qhdmsGe+3}JE;" disabled="true"><field name="TEXT">Budapest1</field></shadow></value></block><block type="esp8266_connect_wifi" id="D2gm)Rhbu$/RnvzW#8Bd" disabled="true" x="1421" y="917"><value name="ssid"><shadow type="text" id="sH=_:494lo*nJl`8uXSh" disabled="true"><field name="TEXT">ARRIS-02D9</field></shadow></value><value name="password"><shadow type="text" id="eZnXfgZ|K^K`51%R|/z=" disabled="true"><field name="TEXT">01C2BBC549B74403</field></shadow></value></block><block type="esp8266_connect_wifi" id="S`EE%u7+J84]JpnwFSh]" disabled="true" x="1475" y="1037"><value name="ssid"><shadow type="text" id=",QE}aMv/f72uF@HMN/-f" disabled="true"><field name="TEXT">MOBAP</field></shadow></value><value name="password"><shadow type="text" id="ysZ|d@~QLBpd.0d-6kx4" disabled="true"><field name="TEXT">Budapest1</field></shadow></value></block></xml>
+        `</field></block></statement></block></next></block></next></block></next></block></statement></block><block type="esp8266_connect_wifi" id="9oJ#zOed{{4:wisHfMEl" disabled="true" x="-15" y="815"><value name="ssid"><shadow type="text" id="^:V/}~oRfTD2^r,2i_99" disabled="true"><field name="TEXT">ARRIS-02D9</field></shadow></value><value name="password"><shadow type="text" id="L(Y36p[{]!PQ1[eaZhe`" disabled="true"><field name="TEXT">01C2BBC549B74403</field></shadow></value><next><block type="esp8266_connect_wifi" id="%KUcNIHwYEKm!lpsYnkG" disabled="true"><value name="ssid"><shadow type="text" id="XVYnkJ2Qp0DR3.*scOH5" disabled="true"><field name="TEXT">MOBAP</field></shadow></value><value name="password"><shadow type="text" id="MEp~,?/-(x_6md;{A|ot" disabled="true"><field name="TEXT">Budapest1</field></shadow></value><next><block type="esp8266_connect_wifi" id="/qGj:diZgm5r6zGT;wtm" disabled="true"><value name="ssid"><shadow type="text" id="$~ZxM!K.Yz%)cPzOOV(-" disabled="true"><field name="TEXT">TP-LINK_WiFi_2</field></shadow></value><value name="password"><shadow type="text" id="yvycDTU:SgVhzmzxMQ@w" disabled="true"><field name="TEXT">Kajdacs1</field></shadow></value></block></next></block></next></block><block type="esp8266_connect_wifi" id="}Pa]/Wh[uZPmcuVx4}9," disabled="true" x="1411" y="907"><value name="ssid"><shadow type="text" id="$*:P4eHLypEv^9`B:x:`" disabled="true"><field name="TEXT">ARRIS-02D9</field></shadow></value><value name="password"><shadow type="text" id="zvLPpJ-}Q|HIG#guJl$f" disabled="true"><field name="TEXT">01C2BBC549B74403</field></shadow></value></block><block type="esp8266_connect_wifi" id="Vcpi$^#cGb%a*S^CeZ{}" disabled="true" x="1465" y="1027"><value name="ssid"><shadow type="text" id="T2=bEkJYD86=K+%=8bpL" disabled="true"><field name="TEXT">MOBAP</field></shadow></value><value name="password"><shadow type="text" id="vx_!SCh*@LfXOj3O*So_" disabled="true"><field name="TEXT">Budapest1</field></shadow></value></block></xml>

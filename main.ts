@@ -113,7 +113,7 @@ input.onButtonPressed(Button.AB, function () {
             . . . . .
             . . . . .
             `)
-        esp8266_EJ.connectWiFi("MOBAP", "Budapest1")
+        esp8266_EJ.connectWiFi("TP-LINK_WiFi_2", "Kajdacs1")
         basic.showLeds(`
             # # . . .
             . . . . .
@@ -168,20 +168,13 @@ input.onButtonPressed(Button.AB, function () {
         }
     } else {
         basic.showLeds(`
-            # . . . .
+            . . . . .
             . . . . .
             . . . . .
             . . . . .
             # . . . .
             `)
     }
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . # .
-        `)
 })
 // thingspeak
 input.onButtonPressed(Button.B, function () {
@@ -271,7 +264,8 @@ input.onButtonPressed(Button.B, function () {
 })
 radio.setGroup(1)
 led.setBrightness(10)
-radio.sendString("XXXXX")
+radio.sendString("x")
+radio.sendString("X")
 // APEX_HTTP
 // Grove ESP USB power EJ01 v1.01
 basic.showLeds(`
