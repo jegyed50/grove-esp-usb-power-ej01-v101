@@ -12,7 +12,8 @@
         "README.md",
         "pxt-esp8266-main-EJ.ts",
         "pxt-esp8266-thingspeak-EJ.ts",
-        "pxt-esp8266-thingspeak-APEX-HTTP.ts"
+        "pxt-esp8266-thingspeak-APEX-HTTP.ts",
+        "pxt-esp8266-thingspeak-EJ2.ts"
     ],
     "testFiles": [
         "test.ts"

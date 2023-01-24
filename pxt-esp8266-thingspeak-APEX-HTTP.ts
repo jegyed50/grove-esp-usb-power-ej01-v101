@@ -8,7 +8,7 @@
  *******************************************************************************/
 
 // ThingSpeak API url.
-const APEX_SERVER_OR_IP = "192.168.1.101"
+const APEX_SERVER_OR_IP = "192.168.1.104"
 
 namespace esp8266_EJ {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
@@ -66,20 +66,20 @@ namespace esp8266_EJ {
         // Connect to ThingSpeak. Return if failed.
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",8080", "OK", 10000) == false) return
        // if (sendCommand("AT+CIPMUX=0", null, 10000) == false) { null }
-       sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_OR_IP + "\",8080", null, 10000)
-        if (sendCommand("AT + CIPMODE=1", null, 10000) == false) { null }
-      //  basic.showString(getResponse2(100))
-        // Construct the data to send.
-        /*let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
-        if (field2 != null) data += "&field2=" + field2
-        if (field2 != null) data += "&field3=" + field3
-        if (field2 != null) data += "&field4=" + field4
-        if (field2 != null) data += "&field5=" + field5
-        if (field2 != null) data += "&field6=" + field6
-        if (field2 != null) data += "&field7=" + field7
-        if (field2 != null) data += "&field8=" + field8*/
-        //let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-11.1"
-        let data = "GET http://192.168.1.101:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
+        let URL = "http://192.168.0.4:8080/ords/f?p=100:6::application_process=log_data_01:::p6_field1:-99.8"
+        let page ="/ords/f?p=100:6::application_process=log_data_01:::p6_field1:-99.8"
+        let http = "GET " + page + "HTTP/1.0\r\nHost:" + URL + "\r\n\r\n"
+        let cmd1 = "AT+CIPSTART=\"TCP\",\"" +   URL + "\", 80\r\n";
+        sendCommand(cmd1, null, 2000)
+        let cmd2 = "AT+CIPSEND=" + http.length + "\r\n"
+        sendCommand(cmd2, null, 2000)
+        sendCommand(http, null, 2000)
+       
+      // sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_OR_IP + "\",8080", null, 10000)
+      // sendCommand("AT + CIPMODE=1", null, 10000)
+      //  sendCommand( "AT+CIPSEND=" + http.length +"\r\n", null,10000)
+
+        let data = "GET /ords/f?p=100:6::application_process=log_data_01:::p6_field1:-77.7"
         // Send the data.
         sendCommand("AT+CIPSEND=" + (data.length + 2))
         sendCommand(data)
@@ -103,6 +103,11 @@ namespace esp8266_EJ {
         // Set the upload successful flag and return.
         */
         APEX_HTTPUploaded = true
+        serial.redirect(
+            SerialPin.P16,
+            SerialPin.P15,
+            BaudRate.BaudRate115200
+        )
         return
     }
     /**
@@ -121,19 +126,27 @@ namespace esp8266_EJ {
 
         // Make sure the WiFi is connected.
         if (isWifiConnected() == false) return
-
-       //if (sendCommand("AT+HTTPCLIENT=2,3,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field1=300\",\"\",\"\",2", null, 10000) == false) { null }
-        //AT + HTTPGETSIZE="http://www.baidu.com/img/bdlogo.gif"
-       if (sendCommand("AT+HTTPGETSIZE\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field1=300\",\"\",\"\",1", null, 10000) == false) { null }
-    //    if (sendCommand("AT+PING=\"44.198.242.240\"", null, 10000) == false) { null }
-//  basic.pause(1000)
-         //      basic.showString(getResponse2(100))
-       // basic.showString(getResponse2(100))
-        radio.sendString("getResponse2(100)")
-               // let data = "GET http://192.168.0.4:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:11.1"
         // Send the data.
-       
+        serial.redirectToUSB()
+        if (sendCommand("AT+HTTPCLIENT=2,3,\"http://192.168.0.4:8080/ords/f?p=100:6::application_process=log_data_01:::p6_field1:-66.6\",\"\",\"\",1", null, 10000) == false) { null }
+        basic.pause(1000)
+        basic.showString(">")
+        radio.setGroup(1)
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        radio.sendString(getResponse2(100))
+        
         APEX_HTTPUploaded = true
+        serial.redirect(
+            SerialPin.P16,
+            SerialPin.P15,
+            BaudRate.BaudRate115200
+        )
         return
     }
 }

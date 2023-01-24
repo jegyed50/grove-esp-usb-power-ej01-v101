@@ -1,4 +1,4 @@
-// pxt-esp8266-thingspeak-EJ.ts
+// pxt-esp8266-thingspeak-EJ2.ts
 /*******************************************************************************
  * Functions for ThingSpeak
  *
@@ -8,24 +8,24 @@
  *******************************************************************************/
 
 // ThingSpeak API url.
-const THINGSPEAK_API_URL = "api.thingspeak.com"
+const THINGSPEAK_API_URL2 = "192.168.0.4"
 
 namespace esp8266_EJ {
     // Flag to indicate whether the data was uploaded to ThingSpeak successfully.
-    let thingspeakUploaded = false
+    let thingspeakUploaded2 = false
 
 
 
     /**
      * Return true if data is uploaded to ThingSpeak successfully.
      */
-    //% subcategory="ThingSpeak"
+    //% subcategory="ThingSpeak2"
     //% weight=30
     //% blockGap=8
-    //% blockId=esp8266_is_thingspeak_data_uploaded
-    //% block="ThingSpeak data uploaded"
-    export function isThingspeakUploaded(): boolean {
-        return thingspeakUploaded
+    //% blockId=esp8266_is_thingspeak_data_uploaded2
+    //% block="ThingSpeak data uploaded2"
+    export function isThingspeakUploaded2(): boolean {
+        return thingspeakUploaded2
     }
 
 
@@ -42,12 +42,12 @@ namespace esp8266_EJ {
      * @param field7 Data for Field 7.
      * @param field8 Data for Field 8.
      */
-    //% subcategory="ThingSpeak"
+    //% subcategory="ThingSpeak2"
     //% weight=29
     //% blockGap=8
-    //% blockId=esp8266_upload_thingspeak
-    //% block="Upload data to ThingSpeak|Write API key %writeApiKey|Field 1 %field1||Field 2 %field2|Field 3 %field3|Field 4 %field4|Field 5 %field5|Field 6 %field6|Field 7 %field7|Field 8 %field8"
-    export function uploadThingspeak(writeApiKey: string,
+    //% blockId=esp8266_upload_thingspeak2
+    //% block="Upload data to ThingSpeak2|Write API key %writeApiKey|Field 1 %field1||Field 2 %field2|Field 3 %field3|Field 4 %field4|Field 5 %field5|Field 6 %field6|Field 7 %field7|Field 8 %field8"
+    export function uploadThingspeak2(writeApiKey: string,
         field1: number,
         field2: number = null,
         field3: number = null,
@@ -58,48 +58,53 @@ namespace esp8266_EJ {
         field8: number = null) {
 
         // Reset the upload successful flag.
-        thingspeakUploaded = false
+        thingspeakUploaded2 = false
 
         // Make sure the WiFi is connected.
         if (isWifiConnected() == false) return
 
         // Connect to ThingSpeak. Return if failed.
         //if (sendCommand("AT+CIPMUX=0", null, 10000) == false) { null }
-        if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL + "\",80", "OK", 10000) == false) return
-        
+        if (sendCommand("AT+CIPSTART=\"TCP\",\"" + THINGSPEAK_API_URL2 + "\",800", "OK", 10000) == false) return
+
         if (sendCommand("AT + CIPMODE=1", null, 10000) == false) { null }
         // Construct the data to send.
-        let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
+      /*  let data = "GET /update?api_key=" + writeApiKey + "&field1=" + field1
         if (field2 != null) data += "&field2=" + field2
         if (field2 != null) data += "&field3=" + field3
         if (field2 != null) data += "&field4=" + field4
         if (field2 != null) data += "&field5=" + field5
         if (field2 != null) data += "&field6=" + field6
         if (field2 != null) data += "&field7=" + field7
-        if (field2 != null) data += "&field8=" + field8
+        if (field2 != null) data += "&field8=" + field8*/
+        let data = "GET /ords/f?p=100:6::application_process=log_data_01:::p6_field1:100"
 
         // Send the data.
         sendCommand("AT+CIPSEND=" + (data.length + 2))
         sendCommand(data)
-        radio.setGroup(1)
-        basic.pause(200)
-        radio.sendString(getResponse2(100))
+        //   radio.setGroup(1)
+        //   basic.pause(200)
+        //   radio.sendString(getResponse2(100))
         // Return if "SEND OK" is not received.
-        if (getResponse("SEND OK", 1000) == "") return
 
-        // Check the response from ThingSpeak.
-        let response = getResponse("+IPD", 1000)
+
+        let response = ""
+       // if (getResponse("SEND OK", 1000) == "") return
+        response = getResponse(null, 1000)
         if (response == "") return
+        // Check the response from ThingSpeak.
+       //  response = getResponse(null, 1000)
+       // if (response == "") return
 
         // Trim the response to get the upload count.
-        response = response.slice(response.indexOf(":") + 1, response.indexOf("CLOSED"))
-        let uploadCount = parseInt(response)
+     //   response = response.slice(response.indexOf(":") + 1, response.indexOf("CLOSED"))
+     //   let uploadCount = parseInt(response)
 
         // Return if upload count is 0.
-        if (uploadCount == 0) return
+      //  if (uploadCount == 0) return
 
         // Set the upload successful flag and return.
-        thingspeakUploaded = true
+        thingspeakUploaded2 = true
         return
     }
 }
